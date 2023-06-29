@@ -89,7 +89,7 @@
     <div class="products-grid" v-if="products.length >= 1">
 
       <Product v-for="product in products" :key="product.id" 
-        :img="'http://localhost:8000' + product.thumbnail"
+        :img="product.thumbnail"
         :title="product.name"
         :price="product.price"
         @add-to-cart="addToCart(product)"
