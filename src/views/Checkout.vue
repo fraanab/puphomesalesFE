@@ -36,7 +36,7 @@
 	const userId = ref('')
 
 	const makeOrder = async () => {
-		if (localStorage.getItem('userId') && localStorage.getItem('email') && localStorage('username')){
+		if (localStorage.getItem('userId') && localStorage.getItem('email') && localStorage.getItem('username')){
 
 			userId.value = localStorage.getItem('userId')
 			email.value = localStorage.getItem('email')
