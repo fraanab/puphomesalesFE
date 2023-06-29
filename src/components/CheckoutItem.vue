@@ -22,7 +22,7 @@
 
 <template>
 	<li>
-		<img :src="'http://localhost:8000' + img" :alt="title">
+		<img :src="img" :alt="title">
 		<p>{{ title }}</p>
 		<span>${{ price }} x {{ quantity }}</span>
 	</li>
