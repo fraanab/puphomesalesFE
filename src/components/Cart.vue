@@ -50,7 +50,7 @@
 			<h2>Cart</h2>
 
 			<CartItem v-for="cartProduct in cartProducts" :key="cartProduct.id"
-				:img="'http://localhost:8000' + cartProduct.thumbnail" 
+				:img="cartProduct.thumbnail" 
 				:title="cartProduct.name" 
 				:price="cartProduct.price" 
 				:quantity="cartProduct.quantity" 
