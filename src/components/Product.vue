@@ -7,7 +7,7 @@
 
 	const verifyAuth = async (id) => {
 		try{
-			const response = await axios(`http://localhost:8000/is-superuser/${id}`)
+			const response = await axios(`https://puphomessalesbe.onrender.com/is-superuser/${id}`)
 			console.log(response.data.issuper)
 			superuser.value = response.data.issuper
 		}catch(e){
