@@ -11,7 +11,7 @@
 
   const logout = async () => {
     try{
-      const response = await axios.post('http://localhost:8000/logout/')
+      const response = await axios.post('https://puphomessalesbe.onrender.com/logout/')
 
       localStorage.removeItem('username')
       localStorage.removeItem('userId')

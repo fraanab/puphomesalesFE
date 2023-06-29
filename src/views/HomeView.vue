@@ -14,7 +14,7 @@
 
   const getProducts = async () => {
     try{
-      const response = await axios('http://localhost:8000/product/get-products/')
+      const response = await axios('https://puphomessalesbe.onrender.com/product/get-products/')
       console.log(response.data)
       products.value = response.data
     }catch(e){
@@ -45,7 +45,7 @@
     try{
       const confirmed = window.confirm('Are you sure you want to delete this product?')
       if (confirmed) {
-        const response = await axios.delete(`http://localhost:8000/product/delete-product/${id}/`, {
+        const response = await axios.delete(`https://puphomessalesbe.onrender.com/product/delete-product/${id}/`, {
           params: {
             userId: userId
           }

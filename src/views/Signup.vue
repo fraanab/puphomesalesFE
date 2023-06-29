@@ -19,7 +19,7 @@
 			return
 		}
 		try{
-			const response = await axios.post('http://localhost:8000/signup/', {
+			const response = await axios.post('https://puphomessalesbe.onrender.com/signup/', {
 				'username': username.value,
 				'email': email.value,
 				'password': password1.value,

@@ -13,7 +13,7 @@
 		if (userId.value) {
 
 			try{
-				const response = await axios(`http://localhost:8000/order/get-orders/${userId.value}`)
+				const response = await axios(`https://puphomessalesbe.onrender.com/order/get-orders/${userId.value}`)
 
 				orders.value = response.data.orders
 				cards_data.value = response.data.cards_data

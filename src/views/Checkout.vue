@@ -41,7 +41,7 @@
 		username.value = localStorage.getItem('username')
 
 		try{
-			const response = await axios.post('http://localhost:8000/order/make-order/', {
+			const response = await axios.post('https://puphomessalesbe.onrender.com/order/make-order/', {
 				first_name: firstname.value,
 				last_name: lastname.value,
 				address: address.value,

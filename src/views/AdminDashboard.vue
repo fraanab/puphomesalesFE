@@ -10,7 +10,7 @@
 
 	const verifyAuth = async (id) => {
 		try{
-			const response = await axios(`http://localhost:8000/is-superuser/${id}`)
+			const response = await axios(`https://puphomessalesbe.onrender.com/is-superuser/${id}`)
 			console.log(response.data.issuper)
 			superuser.value = response.data.issuper
 		}catch(e){
@@ -23,7 +23,7 @@
 	const getAllOrders = async () => {
 		try{
 			console.log('Fetching Orders...');
-			const response = await axios('http://localhost:8000/order/get-all-orders/')
+			const response = await axios('https://puphomessalesbe.onrender.com/order/get-all-orders/')
 			console.log(response.data.orders, 'Fetching done.');
 
 			orders.value = response.data.orders
@@ -56,7 +56,7 @@
 			formData.append('description', productDescription.value)
 			formData.append('price', productPrice.value)
 			formData.append('userId', userId)
-			const response = await axios.post('http://localhost:8000/product/new-product/', formData)
+			const response = await axios.post('https://puphomessalesbe.onrender.com/product/new-product/', formData)
 			console.log(response.data)
 		}catch(e){
 			console.error(e.message)
