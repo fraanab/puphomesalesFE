@@ -36,36 +36,42 @@
 	const userId = ref('')
 
 	const makeOrder = async () => {
-		userId.value = localStorage.getItem('userId')
-		email.value = localStorage.getItem('email')
-		username.value = localStorage.getItem('username')
+		if (localStorage.getItem('userId') && localStorage.getItem('email') && localStorage('username')){
 
-		try{
-			const response = await axios.post('https://puphomessalesbe.onrender.com/order/make-order/', {
-				first_name: firstname.value,
-				last_name: lastname.value,
-				address: address.value,
-				company: company.value,
-				building: building.value,
-				city: city.value,
-				phone: phone.value,
-				userId: userId.value,
-				email: email.value,
-				username: username.value,
-				total_ammount: totalPrice.value,
-				cartProducts: cartProducts.value
-			})
+			userId.value = localStorage.getItem('userId')
+			email.value = localStorage.getItem('email')
+			username.value = localStorage.getItem('username')
 
-			console.log(response.data)
-			setTimeout(()=>{
-				document.querySelector('.ch-success').style.display = 'block'
-			}, 4000)
+			try{
+				const response = await axios.post('https://puphomessalesbe.onrender.com/order/make-order/', {
+					first_name: firstname.value,
+					last_name: lastname.value,
+					address: address.value,
+					company: company.value,
+					building: building.value,
+					city: city.value,
+					phone: phone.value,
+					userId: userId.value,
+					email: email.value,
+					username: username.value,
+					total_ammount: totalPrice.value,
+					cartProducts: cartProducts.value
+				})
 
-			localStorage.setItem('cartItems', JSON.stringify([]))
-			cartProducts.value = []
-		}catch(e){
-			console.error(e.message);
-			document.querySelector('.ch-warn').style.display = 'block'
+				console.log(response.data)
+				setTimeout(()=>{
+					document.querySelector('.ch-success').style.display = 'block'
+				}, 4000)
+
+				localStorage.setItem('cartItems', JSON.stringify([]))
+				cartProducts.value = []
+			}catch(e){
+				console.error(e.message);
+				document.querySelector('.ch-warn').style.display = 'block'
+			}
+
+		}else{
+			window.location.href = '/login'
 		}
 	}
 </script>
