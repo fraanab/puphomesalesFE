@@ -1,0 +1,130 @@
+@font-face {
+  font-family: 'lemon';
+  src: url('@/assets/lemon.otf');
+}
+*{
+  margin: 0;padding: 0;box-sizing: border-box;transition: .3s;
+}
+:root{
+  font-size: 16px;
+  font-family: sans-serif;
+  --a: rgb(220, 67, 52);
+  scroll-behavior: smooth;
+}
+
+span{color: var(--a);}
+.btn1{
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #000;
+  padding: .5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.btn1:hover{
+  background: #000;
+  color: #fff;
+}
+.btn2{
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: #000;
+  padding: .5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.btn2:hover{
+  background: #000;
+  color: #fff;
+}
+.btn3{
+  cursor: pointer;
+  border: none;
+  background: #a00;
+  color: #fff;
+  padding: .5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.btn3:hover{
+  background: #700;
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+}
+
+
+form{
+  width: 720px;
+  padding: 1rem;
+  display: flex;flex-direction: column;
+  gap: .5rem;
+  box-shadow: 0 0 10px #ccc;
+}
+textarea,
+input{
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+textarea{resize: vertical;}
+form input{
+  width: 100%;
+}
+
+body{
+  background: #f1f1f1;
+}
+
+
+@keyframes bark {
+  0%{
+    transform: translateY(0);
+
+    filter:drop-shadow(10px 5px var(--a));
+  }
+  90%{
+    transform: translateY(0);
+    filter:drop-shadow(10px 5px var(--a));
+  }
+  95%{
+    transform: translateY(-30px);
+    filter:drop-shadow(30px 50px var(--a));
+  }
+  100%{
+    transform: translateY(0);
+    filter:drop-shadow(10px 5px var(--a));
+  }
+}
+
+@keyframes navupdown {
+  0%{
+    padding: 1rem 2rem;
+  }
+  50%{
+    padding: 1rem 2rem 3rem 2rem;
+  }
+  100%{
+    padding: 1rem 2rem 3rem 2rem;
+  }
+}
+
+/* @media (max-width: 900px) {
+  header{
+    flex-direction: column-reverse;
+  }
+  .header-a{
+    width: 100%;
+    padding: 1rem;
+  }
+  .header-b{
+    width: 100%;
+    padding: 1rem;
+    display: flex;align-items: center;justify-content: center;
+  }
+  .header-b img{
+  }
+
+} */
